@@ -91,21 +91,23 @@ print(a % b)
 
  //5. С помощью if-else необходимо вывести в консоль, ночь ли сегодня (isNight).
 
-let hour = 6
+let hour = 12
 
 if hour >= 0 && hour < 6 {
     print ("it's night now")
-} else if hour >= 6 && hour <= 12  {
+} else if hour >= 6 && hour <= 12 {
     print ("it's morning")
-} else if hour >= 12 && hour <= 18  {
+} else if hour >= 12 && hour <= 18 {
     print ("it's day now")
-} else {
+} else if hour >= 18 && hour <= 24 {
     print ("it's evening")
+} else {
+    print("Incorrect data")
 }
  
 
 
-let time = 1
+let time = 24
  
 switch time {
 case 0..<6:
@@ -114,10 +116,10 @@ case 6..<12:
     print("it's morning")
 case 12..<18:
     print("it's day now")
-case 18..<24:
+case 18...24:
     print("it's evening")
 default:
-    break
+    print("Incorrect data")
 }
 
  //6. Сделать проверку: является ли число четным: 13, 2, 20, 21, 76. (Число X является четным/нечетным!)
