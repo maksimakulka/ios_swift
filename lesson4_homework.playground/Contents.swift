@@ -160,9 +160,28 @@ if let result = parsingPhoneNumber(phoneNumber: "+37544798999") {
 
 //9*. Создать функцию, которая считает факториал введённого числа.
 
+func factorial(_ x: Int) -> Int {
+    if x < 1 {
+        return 1
+}
+return x * factorial(x-1)
+}
+let resultFactorial = factorial(10)
+print(resultFactorial)
+
 /*
  10*. Создать функцию, которая выводит все числа последовательности Фибоначчи до
  введённого индекса. Например fib(n:6) -> 0, 1, 1, 2, 3, 5, 8 */
 
-/*11*. Создать функцию, которая считает сумму цифр четырехзначного числа,
- переданного в параметры функции (Int).*/
+func fib(_ n: Int) -> Int {
+    if n == 0 {
+        return 0
+    } else if n == 1 {
+        return 1
+    } else {
+        return fib(n - 1) + fib(n - 2)
+    }
+}
+let resultFib = fib(6)
+print(resultFib)
+
