@@ -27,7 +27,7 @@ func getExchangeRate(from: Currency, to: Currency) -> Double? {
     case (.BYN, .USD):
         return 0.045
     case (.EUR, .BYN):
-        return 1.95
+        return nil
     case (.BYN, .EUR):
         return 0.33
     default:
@@ -44,10 +44,11 @@ func convertCurrency(amount: Double, from: Currency, to: Currency) -> Double? {
     return amount * rate
 }
 
-print(convertCurrency(amount: 100, from: .BYN, to: .EUR)!)
+print(convertCurrency(amount: 100, from: .EUR, to: .BYN) ?? "Error, there is no current exchange rate.")
 
 /*
  2. Анализатор результатов экзамена:
+
  
 •   Создайте enum Grade с кейсами A, B, C, D, F.  Каждому кейсу присвойте rawValue типа Int, представляющий числовой балл (например, A = 90, B = 80 и т.д.).
 •   Создайте функцию getLetterGrade(score: Int) -> Grade?, которая принимает числовой балл (Int) и возвращает соответствующую буквенную оценку (Grade).  Если балл находится вне допустимого диапазона (например, меньше 0 или больше 100), функция должна возвращать nil.  Реализуйте логику определения оценки на основе диапазонов баллов (например, 90-100 -> A, 80-89 -> B и т.д.).
