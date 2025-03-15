@@ -157,6 +157,18 @@ if let result = parsingPhoneNumber(phoneNumber: "+37544798999") {
 /* 8*. Создать функцию, принимающую 1 аргумент — число от 0 до 100, и возвращающую
  true, если оно простое, и false, если сложное. Рекомендую попробовать решать рекурсией, чтобы разобраться как она работает. */
 
+func primeNumberCheck(_ number: Int) -> Bool{
+    guard number > 1 else { return false }
+    
+    for i in 2..<number {
+        if number % i == 0 {
+            return false
+        }
+    }
+    return true
+}
+
+print(primeNumberCheck(100))
 
 //9*. Создать функцию, которая считает факториал введённого числа.
 
